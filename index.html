@@ -211,10 +211,10 @@
       </select>
 
       <label for="tpTics">Tics TP:</label>
-      <input type="number" id="tpTics" step="1" />
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="tpTics" step="1" />
 
       <label for="slTics">Tics SL:</label>
-      <input type="number" id="slTics" step="1" />
+      <input type="number" inputmode="numeric" pattern="[0-9]*" id="slTics" step="1" />
 
       <label for="riesgo">Riesgo (%):</label>
       <select id="riesgo">
@@ -404,6 +404,7 @@ function calcular() {
 
 </body>
 </html>
+
 
 
 
