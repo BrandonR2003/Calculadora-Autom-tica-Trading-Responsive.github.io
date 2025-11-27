@@ -237,6 +237,7 @@
       <h2>RESULTADOS</h2>
       <br>
       <div class="result" id="lotajeResult"></div>
+      <div class="result" id="tamanoResult"></div>
       <div class="result" id="rrResult"></div>
       <div class="result" id="MargenResult"></div>
       <div class="result" id="ComisionResult"></div>
@@ -312,6 +313,8 @@ function calcular() {
   const LotajeNeto = Math.floor(lotajeRaw * factor) / factor;
   const ComisionNeta = LotajeNeto * comision;
 
+  const TamanoNeto = LotajeNeto * 100,000
+  
   const MargenNeto = ((LotajeNeto * entrada) * contratos) / (apalancamiento || 1);
   const rr = tpTics / slTics;
 
@@ -330,7 +333,8 @@ function calcular() {
   const fmt = n => n.toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2});
 
   document.getElementById('lotajeResult').textContent = `Lotaje: ${LotajeNeto.toFixed(DECIMALES_LOTE)} Lotes`;
-  document.getElementById('rrResult').textContent = `Riesgo/Beneficio: 1 : ${rr.toFixed(2)}`;
+  document.getElementById('tamanoResult').textContent = `Tamaño: ${TamanoNeto.toFixed(0)} Unidades`;
+  document.getElementById('rrResult').textContent = `Riesgo/Beneficio: 1:${rr.toFixed(0)}`;
   document.getElementById('MargenResult').textContent = `Margen: $${fmt(MargenNeto)}`;
   document.getElementById('ComisionResult').textContent = `Comisión: $${fmt(ComisionNeta)}`;
   document.getElementById('tpPriceResult').textContent = `Precio TP: ${precioTP.toFixed(decimales)}`;
@@ -410,6 +414,7 @@ function calcular() {
 
 </body>
 </html>
+
 
 
 
