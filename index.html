@@ -313,7 +313,7 @@ function calcular() {
   const LotajeNeto = Math.floor(lotajeRaw * factor) / factor;
   const ComisionNeta = LotajeNeto * comision;
 
-  const TamanoNeto = LotajeNeto * 100,000
+  const TamanoNeto = LotajeNeto * 100000;
   
   const MargenNeto = ((LotajeNeto * entrada) * contratos) / (apalancamiento || 1);
   const rr = tpTics / slTics;
@@ -414,6 +414,7 @@ function calcular() {
 
 </body>
 </html>
+
 
 
 
